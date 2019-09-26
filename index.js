@@ -19,13 +19,13 @@ exports.install = function (Vue, options) {
         }, options.duration)
       }
 
-      el.addEventListener('mousedown', this._onmousedown)
-      document.addEventListener('mouseup', this._onmouseup)
+      el.addEventListener('touchstart', this._onmousedown)
+      document.addEventListener('touchend', this._onmouseup)
     },
     unbind: function (el) {
       clearTimeout(this._timeout)
-      el.removeEventListener('mousedown', this._onmousedown)
-      document.removeEventListener('mouseup', this._onmouseup)
+      el.removeEventListener('touchstart', this._onmousedown)
+      document.removeEventListener('touchend', this._onmouseup)
     }
   })
 }
